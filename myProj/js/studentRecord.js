@@ -89,3 +89,4 @@ function updateStudent(id,firstName,secondName,age,yearGroup){
         console.log('Request failed', error);
       });
 }
+
