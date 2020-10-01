@@ -118,5 +118,5 @@ fetch('http://localhost:9092/Student/readAll')
   setTimeout(function () {
     el.style ="display:none";
     location.reload();
-  }, 3000);
+  }, 1000);
 }

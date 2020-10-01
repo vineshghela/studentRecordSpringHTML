@@ -10,7 +10,12 @@ fetch('http://localhost:9092/ClassRoom/readAll')
 
       // Examine the text in the response
       response.json().then(function(studentData) {
-        // console.log(studentData);
+        console.log(studentData[1]);
+        console.log(studentData[1].students[0]);
+        let myvar = studentData[1].students[0];
+        for(let key in myvar){
+          console.log(myvar[key]);
+        }
 
         let table = document.querySelector("table");
         let data = Object.keys(studentData[0]);
@@ -32,6 +37,7 @@ fetch('http://localhost:9092/ClassRoom/readAll')
         if(keys == "students"){
           console.log("skip");
         }else{
+          // console.log("data",data)
           let th = document.createElement("th");
           let text = document.createTextNode(keys);
           th.appendChild(text);
@@ -118,5 +124,5 @@ fetch('http://localhost:9092/ClassRoom/readAll')
   setTimeout(function () {
     el.style ="display:none";
     location.reload();
-  }, 3000);
+  }, 1000);
 }
