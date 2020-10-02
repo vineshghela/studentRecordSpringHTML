@@ -10,11 +10,18 @@ fetch('http://localhost:9092/ClassRoom/readAll')
 
       // Examine the text in the response
       response.json().then(function(studentData) {
-        console.log(studentData[1]);
-        console.log(studentData[1].students[0]);
-        let myvar = studentData[1].students[0];
-        for(let key in myvar){
-          console.log(myvar[key]);
+        // console.log(studentData[1]);
+        // console.log(studentData[1].students[0]);
+        // let myvar = studentData.students;
+        // for (z in myvar){
+        //   console.log("z",myVar[z])
+        // }
+        for (let a of studentData){
+          console.log("a",a);
+          
+          for (let b in a){
+            console.log("b",a[b]);
+         }
         }
 
         let table = document.querySelector("table");
